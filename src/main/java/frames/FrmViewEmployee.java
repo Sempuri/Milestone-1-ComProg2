@@ -54,6 +54,9 @@ public class FrmViewEmployee extends javax.swing.JDialog {
         btnClose = new javax.swing.JButton();
         lblHrs = new javax.swing.JLabel();
         lblPesos = new javax.swing.JLabel();
+        lblNetMonthlySalary = new javax.swing.JLabel();
+        txtNetMonthlySalary = new javax.swing.JTextField();
+        lblpesos1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -123,6 +126,15 @@ public class FrmViewEmployee extends javax.swing.JDialog {
         lblPesos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblPesos.setText("Pesos");
 
+        lblNetMonthlySalary.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblNetMonthlySalary.setText("Net Monthly Salary:");
+
+        txtNetMonthlySalary.setEditable(false);
+        txtNetMonthlySalary.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+
+        lblpesos1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblpesos1.setText("Pesos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,7 +165,8 @@ public class FrmViewEmployee extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblGrossMonthlySalary)
-                            .addComponent(lblTotalHoursWorked))
+                            .addComponent(lblTotalHoursWorked)
+                            .addComponent(lblNetMonthlySalary))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -161,32 +174,32 @@ public class FrmViewEmployee extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(lblHrs))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtGrossMonthlySalary, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtNetMonthlySalary, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtGrossMonthlySalary, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblPesos)))
-                        .addGap(43, 43, 43))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPesos)
+                                    .addComponent(lblpesos1))))
+                        .addGap(45, 45, 45))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEmployeeNo)
-                    .addComponent(txtEmployeeNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEmployeeNo)
+                            .addComponent(txtEmployeeNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblLastName)
                             .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblFirstName)
-                            .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblMonth)
-                            .addComponent(cmbMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTotalHoursWorked)
@@ -197,13 +210,25 @@ public class FrmViewEmployee extends javax.swing.JDialog {
                             .addComponent(lblGrossMonthlySalary)
                             .addComponent(txtGrossMonthlySalary, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPesos))))
-                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblMonth)
+                            .addComponent(cmbMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNetMonthlySalary)
+                            .addComponent(txtNetMonthlySalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblpesos1))))
+                .addGap(17, 17, 17)
                 .addComponent(btnViewAttendance)
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnClose)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -216,6 +241,7 @@ public class FrmViewEmployee extends javax.swing.JDialog {
             tblEmployeeAttendance.setModel(_attendance.GetEmployeeAttendance(txtEmployeeNo.getText(), cmbMonth.getSelectedItem().toString()));
             txtTotalHoursWorked.setText(String.valueOf(_attendance.GetTotalHours()));
             txtGrossMonthlySalary.setText(String.valueOf(_attendance.GetPayrollSalary()));
+            txtNetMonthlySalary.setText(String.valueOf(_attendance.GetNetMonthlySalary()));
  
         } catch (IOException | CsvValidationException ex) {
             Logger.getLogger(FrmViewEmployee.class.getName()).log(Level.SEVERE, null, ex);
@@ -244,13 +270,16 @@ public class FrmViewEmployee extends javax.swing.JDialog {
     private javax.swing.JLabel lblHrs;
     private javax.swing.JLabel lblLastName;
     private javax.swing.JLabel lblMonth;
+    private javax.swing.JLabel lblNetMonthlySalary;
     private javax.swing.JLabel lblPesos;
     private javax.swing.JLabel lblTotalHoursWorked;
+    private javax.swing.JLabel lblpesos1;
     private javax.swing.JTable tblEmployeeAttendance;
     private javax.swing.JTextField txtEmployeeNo;
     private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtGrossMonthlySalary;
     private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtNetMonthlySalary;
     private javax.swing.JTextField txtTotalHoursWorked;
     // End of variables declaration//GEN-END:variables
 }
